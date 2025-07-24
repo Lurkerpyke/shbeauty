@@ -1,0 +1,9 @@
+Componentes que pretendi usar:
+
+ReactBits:
+    Circular Text --v
+    Curved Loop --v
+    Scroll Velocity
+    Scroll Stack
+    Flowing Menu !important --v
+    Infinite Menu
