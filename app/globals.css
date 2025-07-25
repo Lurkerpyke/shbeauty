@@ -128,3 +128,16 @@
 .section2 {
   @apply bg-[url('/bg-sec2.avif')] bg-cover bg-center bg-no-repeat;
 }
+
+@media (max-width: 768px) and (orientation: portrait) {
+  #infinite-grid-menu-canvas {
+    height: 150vh !important;
+    max-height: 150vh;
+  }
+}
+
+@media (orientation: portrait) {
+  .portrait\:pb-\[150\%\] {
+    padding-bottom: 150%;
+  }
+}

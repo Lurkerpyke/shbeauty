@@ -8,6 +8,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        'portrait': { 'raw': '(orientation: portrait)' },
+        'max-sm': { max: '639px' },
+      },
       cursor: {
         'arrow-right': 'url("/arrow-right.svg") 18 18, auto',
       },

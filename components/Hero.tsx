@@ -88,7 +88,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <section ref={containerRef} className="h-[100vh] overflow-hidden relative pt-15 md:pt-0 bg-background">
+        <section ref={containerRef} className="h-[100vh] overflow-hidden relative pt-15 lg:pt-0 bg-background">
             <div className="relative h-full flex flex-col gap-3 md:justify-center justify-start">
                 <CircularText
                     text="QUALIDADE*QUALIDADE*"
@@ -97,7 +97,7 @@ const Hero = () => {
                     className="absolute left-1/2 top-10 sm:top-20 translate-x-[-50%] texto hidden md:block"
                 />
 
-                <div className="flex flex-col gap-2 md:gap-5 px-6 sm:px-20 z-10 relative">
+                <div className="flex flex-col gap-2 md:gap-5 px-6 md:px-20 z-10 relative">
                     <div className="flex gap-3 sm:gap-5 items-center">
                         <p className={`${cormorantSC.className} tracking-wider text-xl sm:text-3xl texto`}>001</p>
                         <span className={`${cormorantSC.className} texto tracking-wider font-bold text-lg sm:text-2xl p-1`}>
@@ -127,7 +127,7 @@ const Hero = () => {
                     alt="Sobrancelhas"
                     width={500}
                     height={500}
-                    className="w-full sm:w-1/2 h-[40vh] sm:h-[100vh] object-cover sm:absolute sm:top-0 sm:right-0 sm:-z-10 mt-5 md:mt-0"
+                    className="w-full md:w-1/2 h-[40vh] md:h-[100vh] object-cover md:absolute md:top-0 md:right-0 md:-z-10 mt-5 md:mt-0"
                 />
             </div>
             <div className="absolute bottom-5 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce z-10">

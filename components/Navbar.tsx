@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -9,6 +8,7 @@ import { Cormorant_SC, Montserrat } from 'next/font/google'
 import { Button } from './ui/button'
 import { services } from '@/data'
 import FlowingMenu from './ui/flowingmenu'
+import { useState, useEffect } from 'react'
 
 const cormorantSC = Cormorant_SC({
     subsets: ['latin'],
@@ -27,6 +27,22 @@ const montserrat = Montserrat({
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
 
+    useEffect(() => {
+        if (isOpen) {
+            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+            document.body.style.overflow = 'hidden';
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+        } else {
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+        }
+
+        return () => {
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+        };
+    }, [isOpen]);
+
     return (
         <nav
             className={cn(
@@ -34,7 +50,7 @@ export default function Navbar() {
                 "top-0 left-0 w-full z-50 p-4 uppercase backdrop-blur transition-all duration-300",
                 isOpen ? "min-h-screen" : "h-15",
                 "lg:fixed",
-                isOpen ? "relative" : "fixed",
+                "fixed",
             )}
 
         >
@@ -73,7 +89,7 @@ export default function Navbar() {
                         transition={{ duration: 0.3 }}
                         className={cn(
                             "inset-0 bg-black text-white flex flex-col md:flex-row z-40 p-5 md:p-10",
-                            "absolute lg:fixed",
+                            "fixed",
                             "overflow-y-auto"
                         )}
                     >
