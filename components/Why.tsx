@@ -67,7 +67,7 @@ const Why = () => {
       </div>
 
       <div className="flex flex-col items-center text-center max-w-2xl -translate-y-[25vh]">
-        <h1 className={`${cormorantSC.className} texto2 tracking-wider text-4xl font-bold mb-4`}>Por quê escolher a SH BEAUTY?</h1>
+        <h1 className={`${cormorantSC.className} texto2 tracking-wider text-4xl font-bold mb-4 capitalize`}>Por quê escolher a SH BEAUTY?</h1>
         <p className={`${montserrat.className} texto2 text-lg`}>
           Estamos dedicados a fornecer as melhores soluções de beleza que realçam sua beleza natural com criatividade e cuidado.
         </p>

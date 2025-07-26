@@ -11,14 +11,14 @@ import { useRef } from 'react';
 
 const cormorantSC = Cormorant_SC({
     subsets: ['latin'],
-    weight: ['400', '500', '600', '700'],
+    weight: ['300', '400', '500', '600', '700'],
     variable: '--font-cormorant-sc',
     display: 'swap',
 });
 
 const monserrat = Montserrat({
     subsets: ['latin'],
-    weight: ['300', '400', '500', '600', '700'],
+    weight: ['100','300', '400', '500', '600', '700'],
     variable: '--font-montserrat',
     display: 'swap',
 });
@@ -99,22 +99,22 @@ const Hero = () => {
 
                 <div className="flex flex-col gap-2 md:gap-5 px-6 md:px-20 z-10 relative">
                     <div className="flex gap-3 sm:gap-5 items-center">
-                        <p className={`${cormorantSC.className} tracking-wider text-xl sm:text-3xl texto`}>001</p>
-                        <span className={`${cormorantSC.className} texto tracking-wider font-bold text-lg sm:text-2xl p-1`}>
+                        <p className={`${monserrat.className} tracking-normal text-xl sm:text-3xl texto font-thin`}>001</p>
+                        <span className={`${cormorantSC.className} translate-y-0.5 texto tracking-widest font-bold text-lg sm:text-2xl`}>
                             SH BEAUTY
                         </span>
                     </div>
 
-                    <h1 className={`${cormorantSC.className} texto uppercase tracking-wider font-bold text-3xl sm:text-7xl`}>
+                    <h1 className={`${cormorantSC.className} font-medium texto uppercase tracking-tight text-3xl sm:text-7xl`}>
                         Sobrancelhas
                     </h1>
 
                     <div className="flex w-full">
                         <div className="flex flex-col gap-5 max-w-full sm:max-w-[40vw]">
-                            <h3 className={`${monserrat.className} text-md sm:text-2xl font-medium texto`}>
+                            <h3 className={`${monserrat.className} capitalize text-md sm:text-xl texto font-normal`}>
                                 Feito para o seu olhar. Pensado para ser só seu.
                             </h3>
-                            <p className={`${monserrat.className} text-sm sm:text-md texto`}>
+                            <p className={`${monserrat.className}  text-sm sm:text-md texto leading-6 font-light`}>
                                 Cada design é mapeado para se ajustar ao formato e à personalidade do seu olhar. O trabalho é feito fio a fio, respeitando seus traços naturais e acompanhando seus movimentos. Seja você fã de um estilo mais delicado ou marcante, o resultado é sempre o mesmo: sobrancelhas que parecem ter nascido com você.
                             </p>
                         </div>

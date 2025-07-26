@@ -1,15 +1,15 @@
 export const services = [
-    { link: '#', text: 'LASH EXTENSION', image: 'https://picsum.photos/600/400?random=1' },
-    { link: '#', text: 'KERATINÉ', image: 'https://picsum.photos/600/400?random=2' },
-    { link: '#', text: 'STEM CELL', image: 'https://picsum.photos/600/400?random=3' },
-    { link: '#', text: 'BROW BOMBER', image: 'https://picsum.photos/600/400?random=4' },
-    { link: '#', text: 'FACE THREADING', image: 'https://picsum.photos/600/400?random=5' },
-    { link: '#', text: 'MANICURE', image: 'https://picsum.photos/600/400?random=6' },
-    { link: '#', text: 'NAIL ART', image: 'https://picsum.photos/600/400?random=7' },
-    { link: '#', text: 'PEDICURE', image: 'https://picsum.photos/600/400?random=8' },
-    { link: '#', text: 'WAXING', image: 'https://picsum.photos/600/400?random=9' },
-    { link: '#', text: 'MAKE UP', image: 'https://picsum.photos/600/400?random=10' },
-    { link: '#', text: 'EVERBODY', image: 'https://picsum.photos/600/400?random=11' },
+    { link: '#', text: '001 LASH EXTENSION', image: 'https://picsum.photos/600/400?random=1' },
+    { link: '#', text: '002 KERATINÉ', image: 'https://picsum.photos/600/400?random=2' },
+    { link: '#', text: '003 STEM CELL', image: 'https://picsum.photos/600/400?random=3' },
+    { link: '#', text: '004 BROW BOMBER', image: 'https://picsum.photos/600/400?random=4' },
+    { link: '#', text: '005 FACE THREADING', image: 'https://picsum.photos/600/400?random=5' },
+    { link: '#', text: '006 MANICURE', image: 'https://picsum.photos/600/400?random=6' },
+    { link: '#', text: '007 NAIL ART', image: 'https://picsum.photos/600/400?random=7' },
+    { link: '#', text: '008 PEDICURE', image: 'https://picsum.photos/600/400?random=8' },
+    { link: '#', text: '009 WAXING', image: 'https://picsum.photos/600/400?random=9' },
+    { link: '#', text: '010 MAKE UP', image: 'https://picsum.photos/600/400?random=10' },
+    { link: '#', text: '011 EVERBODY', image: 'https://picsum.photos/600/400?random=11' },
 ];
 
 export const items = [

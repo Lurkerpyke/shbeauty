@@ -2,6 +2,21 @@
 
 import { FC, useRef, useState, useEffect, RefObject } from "react";
 import { mat4, quat, vec2, vec3 } from "gl-matrix";
+import { Cormorant_SC, Montserrat } from "next/font/google";
+
+const cormorantSC = Cormorant_SC({
+    subsets: ['latin'],
+    weight: ['300', '400', '500', '600', '700'],
+    variable: '--font-cormorant-sc',
+    display: 'swap',
+});
+
+const montserrat = Montserrat({
+    subsets: ['latin'],
+    weight: ['400', '500', '600', '700'],
+    variable: '--font-montserrat',
+    display: 'swap',
+});
 
 const discVertShaderSource = `#version 300 es
 
@@ -1068,7 +1083,7 @@ class InfiniteGridMenu {
         gl.enable(gl.CULL_FACE);
         gl.enable(gl.DEPTH_TEST);
         
-        gl.clearColor(0.478, 0.376, 0.278, 1.0);
+        gl.clearColor(0.447, 0.373, 0.306, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
 
@@ -1298,7 +1313,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
                             select-none
                             absolute
                             uppercase
-                            font-black
+                            font-semibold
                             text-3xl md:text-4xl lg:text-6xl
                             top-[15%] md:top-1/2
                             left-1/2 md:left-[1.6em]
@@ -1313,6 +1328,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
                                         ? "opacity-0 pointer-events-none duration-[100ms]"
                                         : "opacity-100 pointer-events-auto duration-[500ms]"
                                     }
+                            ${montserrat.className}
                         `}
                             >
                                 {activeItem.title}
@@ -1323,7 +1339,8 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
                                 select-none
                                 absolute
                                 uppercase
-                                text-md md:text-base lg:text-xl
+                                font-light
+                                text-md md:text-base lg:text-2xl
                                 top-[18%] md:top-1/2
                                 left-1/2 md:left-auto md:right-[6em]
                                 transform -translate-x-1/2 md:translate-x-0
@@ -1337,6 +1354,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
                                         ? "opacity-0 pointer-events-none duration-[100ms]"
                                         : "opacity-100 pointer-events-auto duration-[500ms]"
                                     }
+                                ${cormorantSC.className}
                             `}
                             >
                                 {activeItem.description}
