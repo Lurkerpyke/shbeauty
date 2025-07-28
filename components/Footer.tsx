@@ -1,6 +1,6 @@
 "use client"
 
-import { Github, Instagram, Linkedin } from "lucide-react"
+import { Instagram } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from "next/link"
 import { Cormorant_SC, Montserrat } from "next/font/google"
@@ -29,17 +29,9 @@ export function Footer() {
                         <h2 className={`${cormorantSC.className} text-4xl font-bold`}>SH BEAUTY</h2>
                         <p className="text-2xl uppercase">Let&apos;s make your dream come true.</p>
                         <div className="flex gap-4">
-                            <Link href="https://github.com/Lurkerpyke" className="flex flex-col items-center justify-center gap-1 hover:text-neutral-300 transition">
-                                <div className="text-xs uppercase">Github</div>
-                                <Github className="h-6 w-6" />
-                            </Link>
                             <Link href="https://instagram.com" className="flex flex-col items-center justify-center gap-1 hover:text-neutral-300 transition">
-                                <div className="text-xs uppercase">Instagram</div>
-                                <Instagram className="h-6 w-6" />
-                            </Link>
-                            <Link href="https://linkedin.com" className="flex flex-col items-center justify-center gap-1 hover:text-neutral-300 transition">
-                                <div className="text-xs uppercase">LinkedIn</div>
-                                <Linkedin className="h-6 w-6" />
+                                <div className="text-md uppercase">Instagram</div>
+                                <Instagram className="h-10 w-10" />
                             </Link>
                         </div>
                     </div>

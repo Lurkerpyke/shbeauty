@@ -1,7 +1,9 @@
 import React from "react";
 import { gsap } from "gsap";
+import { Montserrat } from "next/font/google";
 
 interface MenuItemProps {
+    id: string;
     link: string;
     text: string;
     image: string;
@@ -10,6 +12,13 @@ interface MenuItemProps {
 interface FlowingMenuProps {
     items?: MenuItemProps[];
 }
+
+const monserrat = Montserrat({
+    subsets: ['latin'],
+    weight: ['100','300', '400', '500', '600', '700'],
+    variable: '--font-montserrat',
+    display: 'swap',
+});
 
 const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
     return (
@@ -80,7 +89,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
     const repeatedMarqueeContent = React.useMemo(() => {
         return Array.from({ length: 1 }).map((_, idx) => (
             <React.Fragment key={idx}>
-                <span className="text-[#060010] uppercase font-normal text-[4vh] leading-[1.2] p-[1vh_1vw_0]">
+                <span className={`text-[#060010] uppercase font-light text-xl leading-[1.2] p-[1vh_1vw_0] ${monserrat.className}`}>
                     {text}
                 </span>
                 <div
@@ -102,7 +111,27 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                {text}
+                <span className="flex items-center justify-between w-full px-4">
+                    <span className={`${monserrat.className} text-xl font-light w-[20%] text-left`}>
+                        {text.split(" ")[0]}
+                    </span>
+                    <span className={`${monserrat.className} text-xl font-normal uppercase text-center w-[60%]`}>
+                        {text.split(" ").slice(1).join(" ")} {/* Nome */}
+                    </span>
+                    <span className="w-[20%] text-right">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-8 h-8 inline-block"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth="0.5"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M17 7l-10 10m0-10h10v10" />
+                        </svg>
+                    </span>
+                </span>
+
             </a>
             <div
                 className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-white translate-y-[101%]"

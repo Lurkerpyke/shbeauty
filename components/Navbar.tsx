@@ -47,7 +47,7 @@ export default function Navbar() {
         <nav
             className={cn(
                 montserrat.className,
-                "top-0 left-0 w-full z-50 p-4 uppercase backdrop-blur transition-all duration-300",
+                "top-0 left-0 w-full z-50 p-4 uppercase backdrop-blur transition-all duration-500",
                 isOpen ? "min-h-screen" : "h-15",
                 "lg:fixed",
                 "fixed",
@@ -124,6 +124,7 @@ export default function Navbar() {
                                     />
                                     <div className="h-full">
                                         <Button
+                                            variant={'default'}
                                             size="lg"
                                             className="h-full px-6 py-4 bg-black text-white border border-white rounded-none text-lg flex items-center justify-center row-span-2"
                                         >

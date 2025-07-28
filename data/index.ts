@@ -1,15 +1,16 @@
 export const services = [
-    { link: '#', text: '001 LASH EXTENSION', image: 'https://picsum.photos/600/400?random=1' },
-    { link: '#', text: '002 KERATINÉ', image: 'https://picsum.photos/600/400?random=2' },
-    { link: '#', text: '003 STEM CELL', image: 'https://picsum.photos/600/400?random=3' },
-    { link: '#', text: '004 BROW BOMBER', image: 'https://picsum.photos/600/400?random=4' },
-    { link: '#', text: '005 FACE THREADING', image: 'https://picsum.photos/600/400?random=5' },
-    { link: '#', text: '006 MANICURE', image: 'https://picsum.photos/600/400?random=6' },
-    { link: '#', text: '007 NAIL ART', image: 'https://picsum.photos/600/400?random=7' },
-    { link: '#', text: '008 PEDICURE', image: 'https://picsum.photos/600/400?random=8' },
-    { link: '#', text: '009 WAXING', image: 'https://picsum.photos/600/400?random=9' },
-    { link: '#', text: '010 MAKE UP', image: 'https://picsum.photos/600/400?random=10' },
-    { link: '#', text: '011 EVERBODY', image: 'https://picsum.photos/600/400?random=11' },
+    { link: '/services/001', text: '001 DESIGN SIMPLES', image: 'https://picsum.photos/600/400?random=1', id: '001' },
+    { link: '/services/002', text: '002 DESIGN + RENNA', image: 'https://picsum.photos/600/400?random=2', id: '002' },
+    { link: '/services/003', text: '003 BULÇO', image: 'https://picsum.photos/600/400?random=3', id: '003' },
+    { link: '/services/004', text: '004 SPA DOS LÁBIOS', image: 'https://picsum.photos/600/400?random=4', id: '004' },
+    { link: '/services/005', text: '005 MAQUIAGEM SOCIAL', image: 'https://picsum.photos/600/400?random=5', id: '005' },
+    { link: '/services/006', text: '006 MAQUIAGEM BEAUTY', image: 'https://picsum.photos/600/400?random=6', id: '006' },
+    { link: '/services/007', text: '007 RECONSTRUÇÃO + ARGILA', image: 'https://picsum.photos/600/400?random=7', id: '007' },
+    { link: '/services/008', text: '008 BROW LAMINATION', image: 'https://picsum.photos/600/400?random=8', id: '008' },
+    { link: '/services/009', text: '009 BABYLISS', image: 'https://picsum.photos/600/400?random=9', id: '009' },
+    { link: '/services/010', text: '010 CURSO AUTOMAQUIAGEM', image: 'https://picsum.photos/600/400?random=10', id: '010' },
+    { link: '/services/011', text: '011 MAQUIAGEM ARTÍSTICA', image: 'https://picsum.photos/600/400?random=11', id: '011' },
+    { link: '/services/012', text: '012 MAQUIAGEM INFANTIL', image: 'https://picsum.photos/600/400?random=11', id: '012' },
 ];
 
 export const items = [
