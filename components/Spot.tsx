@@ -3,6 +3,7 @@
 import { Cormorant_SC, Montserrat } from 'next/font/google';
 import React, { useRef } from 'react';
 import Image from 'next/image';
+import DecryptedText from './ui/decryptedtext';
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -53,11 +54,55 @@ const Spot = ({ service }: { service: any }) => {
         <div className='w-full h-full px-5 pt-30'>
           <div className='relative flex gap-5 justify-around items-center h-full '>
             <div className='max-w-[20vw] h-full flex flex-col justify-start items-center'>
-              <div className='h-[50%]'>
+              <div className='h-[30%]'>
                 <p className={`${montserrat.className} uppercase text-start text-[0.5rem] font-normal`}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis asperiores accusamus repellendus deserunt doloremque reprehenderit corrupti earum quam.</p>
               </div>
-              <div className='h-[50%] items-center'>
-                <h3 className={`${montserrat.className} uppercase text-center text-6xl font-bold text-black`}>{service.price}</h3>
+              <div className='h-[80%] flex flex-col justify-around items-center'>
+                <h3 className={`${montserrat.className} uppercase text-center text-6xl font-bold text-black`}>
+                  <div style={{ marginTop: '0rem' }}>
+                    <DecryptedText
+                      text={service.price}
+                      speed={100}
+                      characters="░▒▓█▌▐▄▀▄█ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@!*&%"
+                      animateOn="view"
+                      encryptedClassName="text-5xl"
+                      revealDirection="start"
+                      sequential
+                    />
+                  </div>
+                </h3>
+                <a
+                  href={`https://wa.me/5581997147184?text=${encodeURIComponent(
+                    `Olá, tudo bem? 👋\n\nEstou visitando seu site e me interessei por um serviço:\n\n${service.title}\nPreço: ${service.price}\n\nGostaria de saber mais informações, por favor.`
+                  )}`}
+
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`
+                    h-36 w-36
+                    flex items-center justify-center
+                    bg-[#ffe1c8] text-black
+                    rounded-full
+                    border border-black/10 shadow-[0_8px_24px_rgba(0,0,0,0.08)]
+                    text-sm tracking-wide uppercase
+                    transition-all duration-300 ease-in-out
+                    hover:bg-[#fff1e6] hover:scale-105 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)]
+                    active:scale-95
+                    cursor-arrow-right
+                    ${montserrat.className}
+                  `}
+                >
+                  <DecryptedText
+                    text="Agende"
+                    speed={100}
+                    maxIterations={20}
+                    characters="ABCD1234!?"
+                    className="revealed"
+                    parentClassName="all-letters"
+                    encryptedClassName="font-bold"
+                    sequential
+                  />
+                </a>
               </div>
             </div>
             <div className='max-w-[20vw] flex flex-col gap-2 h-full items-center'>
