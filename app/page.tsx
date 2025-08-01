@@ -2,7 +2,7 @@ import Why from '@/components/Why';
 import Hero from '@/components/Hero';
 import Price from '@/components/Price';
 
-const Page = () => {
+const HomePage = () => {
   return (
     <main>
 
@@ -16,4 +16,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default HomePage;

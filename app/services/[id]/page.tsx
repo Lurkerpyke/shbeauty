@@ -2,6 +2,7 @@
 import { ServiceId, servicesDetails } from '@/data/services';
 import { notFound } from 'next/navigation';
 import ServiceDetails from './ServicesDetails';
+import Spot from '@/components/Spot';
 
 type Params = { params: Promise<{ id: string }> };
 
@@ -17,8 +18,10 @@ export default async function ServicePage(props: Params) {
     if (!servico) return notFound();
 
     return (
-        <main>
+        <main className='overflow-hidden'>
             <ServiceDetails service={servico} />
+            
+            <Spot service={servico}/>
         </main>
     );
 }
