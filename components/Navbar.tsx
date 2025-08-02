@@ -63,7 +63,7 @@ export default function Navbar() {
                         height={50}
                         className='-translate-y-3 z-50'
                     />
-                    <Link href="/" className={`${cormorantSC.className} tracking-wider font-bold text-xl z-50 relative`}>
+                    <Link href="/" className={`${cormorantSC.className} text-white tracking-wider font-bold text-xl z-50 relative`}>
                         SH BEAUTY
                     </Link>
                 </div>

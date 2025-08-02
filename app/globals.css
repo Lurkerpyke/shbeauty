@@ -45,7 +45,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(92.802% 0.04684 61.953);
+  --background: oklch(93.279% 0.04336 61.598);
   --foreground: oklch(0.2046 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -125,8 +125,35 @@
   cursor: url('/arrow-right-cursor.svg') 18 18, auto;
 }
 
+/* globals.css ou styles globais */
+.btn-3d-shadow {
+  box-shadow: -4px 4px 0 0 black;
+  /* só sombra preta */
+}
+
 .section2 {
   @apply bg-[url('/bg-sec2.avif')] bg-cover bg-center bg-no-repeat;
+}
+
+@layer utilities {
+  .mask-gradient-top {
+    mask-image: linear-gradient(to bottom,
+        transparent 25%,
+        /* topo invisível */
+        black 60%,
+        /* imagem aparece a partir de 20% */
+        black 100%
+        /* resto da imagem visível */
+      );
+    -webkit-mask-image: linear-gradient(to bottom,
+        transparent 25%,
+        black 60%,
+        black 100%);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+  }
 }
 
 @media (max-width: 768px) and (orientation: portrait) {

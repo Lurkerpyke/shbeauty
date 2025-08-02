@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br " className={`${cormorant.className} dark`}>
+    <html lang="pt-br " className={`${cormorant.className}`}>
       <body
         className='font-serif'
       >
