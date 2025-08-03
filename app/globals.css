@@ -121,6 +121,10 @@
   }
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .cursor-arrow-right {
   cursor: url('/arrow-right-cursor.svg') 18 18, auto;
 }

@@ -4,7 +4,7 @@ import { items } from '@/data';
 
 const Price = () => {
   return (
-    <section className="h-[100vh] overflow-hidden relative pt-15 md:pt-0">
+    <section id='services' className="h-[100vh] overflow-hidden relative pt-15 md:pt-0">
       <div style={{ height: 'full', position: 'relative' }}>
         <InfiniteMenu items={items} />
       </div>

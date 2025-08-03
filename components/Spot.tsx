@@ -31,7 +31,7 @@ const Spot = ({ service }: { service: any }) => {
         <div className='flex relative justify-between items-center w-[80vw] h-[60vh] px-10'>
           <div className='absolute bottom-0 left-0 flex flex-col items-center gap-2 max-w-[15%] animar'>
             <Image src={'/images/pexels-fotios-photos-2035214.avif'} alt='services' width={600} height={900} className='h-[300px] w-auto object-contain' />
-            <p className={`text-[0.5rem] text-center ${montserrat.className} uppercase`}>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            <p className={`text-[0.5rem] text-center ${montserrat.className} uppercase`}>Utilizamos produtos profissionais de beleza cuidadosamente selecionados para resultados visíveis, duradouros e seguros</p>
           </div>
 
           <Image src={'/images/pexels-n-voitkevich-5128182.avif'} alt='services' width={1200} height={1600} className='h-[800px] w-auto max-w-[30%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animar object-contain' />
@@ -44,7 +44,7 @@ const Spot = ({ service }: { service: any }) => {
               height={900}
               className='h-[300px] w-auto'
             />
-            <p className={`text-[0.5rem] text-center ${montserrat.className} uppercase`}>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            <p className={`text-[0.5rem] text-center ${montserrat.className} uppercase`}>Ambientes preparados com tecnologia estética de ponta para um atendimento personalizado e eficaz em cada tratamento.</p>
           </div>
         </div>
       </div>
@@ -57,7 +57,8 @@ const Spot = ({ service }: { service: any }) => {
           <div className='relative flex gap-5 justify-around items-center h-full '>
             <div className='max-w-[20vw] h-full flex flex-col justify-start items-center'>
               <div className='h-[30%]'>
-                <p className={`${montserrat.className} uppercase text-start text-[0.5rem] font-normal`}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis asperiores accusamus repellendus deserunt doloremque reprehenderit corrupti earum quam</p>
+                <p className={`${montserrat.className} uppercase text-start text-[0.6rem] font-normal`}>Utilizamos materiais de alta qualidade e tecnologia avançada para oferecer resultados excepcionais.
+                  Nosso foco é valorizar sua beleza natural, despertando o que há de mais autêntico e poderoso em você.</p>
               </div>
               <div className='h-[80%] flex flex-col justify-around items-center'>
                 <h3 className={`${montserrat.className} uppercase text-center text-6xl font-bold text-black`}>
@@ -111,7 +112,7 @@ const Spot = ({ service }: { service: any }) => {
               <Image src={'/images/pexels-rasul-lotfi-16110887-31845455.avif'} alt='services' width={900} height={900} className='h-full w-auto object-contain' />
 
               <p className={`text-[0.5rem] text-start ${montserrat.className} uppercase`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit
+                resultados de alta qualidade
               </p>
             </div>
             <div className='max-w-[20vw] items-center justify-center'>
@@ -120,7 +121,7 @@ const Spot = ({ service }: { service: any }) => {
                 <Image src={'/images/pexels-marcelochagas-2598179.avif'} alt='services' width={900} height={900} className='w-[100px] h-auto object-contain' />
                 <Image src={'/images/pexels-marcelochagas-2598179.avif'} alt='services' width={900} height={900} className='w-[100px] h-auto object-contain' />
               </div>
-              <p className={`${montserrat.className} uppercase text-end text-[0.5rem] font-normal`}>Lorem, ipsum dolor sit amet</p>
+              <p className={`${montserrat.className} uppercase text-end text-[0.6rem] font-normal`}>Materiais usados</p>
             </div>
           </div>
         </div>
@@ -145,7 +146,7 @@ const Spot = ({ service }: { service: any }) => {
                 btn-3d-shadow
               "
             >
-              Click me
+              Escolher
             </Button>
           </div>
           <Image

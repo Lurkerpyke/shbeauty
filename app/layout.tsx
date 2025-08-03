@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br " className={`${cormorant.className}`}>
       <body
-        className='font-serif'
+        className='font-serif scroll-smooth'
       >
         <Navbar />
         {children}

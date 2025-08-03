@@ -105,7 +105,7 @@ export default function Navbar() {
                                     <Link href="#" onClick={() => setIsOpen(false)}>/ NOSSA HISTÓRIA</Link>
                                     <Link href="#" onClick={() => setIsOpen(false)}>/ JORNAL</Link>
                                     <Link href="#" onClick={() => setIsOpen(false)}>/ LOCALIZAÇÃO</Link>
-                                    <Link href="#" onClick={() => setIsOpen(false)}>/ SERVIÇOS</Link>
+                                    <Link href="#services" onClick={() => setIsOpen(false)}>/ SERVIÇOS</Link>
                                 </nav>
                             </div>
                             <div className="mt-8">

@@ -3,6 +3,7 @@
 import { FC, useRef, useState, useEffect, RefObject } from "react";
 import { mat4, quat, vec2, vec3 } from "gl-matrix";
 import { Cormorant_SC, Montserrat } from "next/font/google";
+import { useRouter } from "next/navigation";
 
 const cormorantSC = Cormorant_SC({
     subsets: ['latin'],
@@ -1083,7 +1084,7 @@ class InfiniteGridMenu {
         gl.enable(gl.CULL_FACE);
         gl.enable(gl.DEPTH_TEST);
         
-        gl.clearColor(0.447, 0.373, 0.306, 1.0);
+        gl.clearColor(1.0, 0.882, 0.784, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
 
@@ -1288,12 +1289,15 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
         };
     }, [items]);
 
+    const router = useRouter();
+
     const handleButtonClick = () => {
         if (!activeItem?.link) return;
+
         if (activeItem.link.startsWith("http")) {
             window.open(activeItem.link, "_blank");
         } else {
-            console.log("Internal route:", activeItem.link);
+            router.push(activeItem.link); // aqui faz a navegação interna funcionar
         }
     };
 
