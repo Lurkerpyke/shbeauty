@@ -6,5 +6,5 @@ ReactBits:
     Scroll Velocity
     Scroll Stack
     Flowing Menu !important --v
-    Infinite Menu
-    Decrypted Text (Sequential, Original Charts, Animate on Hover, 40ms, 10) !important
+    Infinite Menu --v
+    Decrypted Text (Sequential, Original Charts, Animate on Hover, 40ms, 10) !important --v

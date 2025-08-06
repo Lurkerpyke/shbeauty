@@ -131,8 +131,8 @@ const Hero = () => {
                 />
             </div>
             <div className="absolute bottom-5 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce z-10">
-                <ChevronDown className="w-6 h-6 sm:w-10 sm:h-10 text-white" />
-                <span className={`${monserrat.className} mt-1 text-xs sm:text-sm tracking-widest text-white`}>
+                <ChevronDown className="w-6 h-6 sm:w-10 sm:h-10" />
+                <span className={`${monserrat.className} mt-1 text-xs sm:text-sm tracking-widest`}>
                     SCROLL
                 </span>
             </div>

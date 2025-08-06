@@ -1,6 +1,6 @@
 export const services = [
     { link: '/services/001', text: '001 DESIGN SIMPLES', image: '/placeholder.svg', id: '001' },
-    { link: '/services/002', text: '002 DESIGN + RENNA', image: '/placeholder.svg', id: '002' },
+    { link: '/services/002', text: '002 DESIGN + HENNA', image: '/placeholder.svg', id: '002' },
     { link: '/services/003', text: '003 BULÇO', image: '/placeholder.svg', id: '003' },
     { link: '/services/004', text: '004 SPA DOS LÁBIOS', image: '/placeholder.svg', id: '004' },
     { link: '/services/005', text: '005 MAQUIAGEM SOCIAL', image: '/placeholder.svg', id: '005' },
@@ -54,7 +54,7 @@ export const items = [
         image: '/placeholder.svg',
         link: '/services/007',
         title: 'R$ 40,00',
-        description: '/placeholder.svg',
+        description: 'Reconstrução + Argila',
     },
     {
         image: '/placeholder.svg',

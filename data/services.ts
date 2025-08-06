@@ -3,7 +3,7 @@ export const servicesDetails = {
         title: "Design Simples",
         description:
             "Realce a beleza natural das suas sobrancelhas com um design delicado, preciso e harmonioso. Ideal para quem busca definição sem exageros.",
-        image: "https://picsum.photos/600/400?random=1",
+        image: "/images/serviceimg/001/designs.avif",
         price: "R$ 30,00",
         passos: {
             passo1: {
@@ -29,10 +29,10 @@ export const servicesDetails = {
         }
     },
     "002": {
-        title: "Design + Renna",
+        title: "Design + Henna",
         description:
             "Combine o design de sobrancelhas com a coloração natural da henna. Resultado mais marcante e duradouro para destacar seu olhar.",
-        image: "https://picsum.photos/600/400?random=2",
+        image: "/images/serviceimg/002/henna.avif",
         price: "R$ 45,00",
         passos: {
             passo1: {
@@ -61,7 +61,7 @@ export const servicesDetails = {
         title: "Bulço",
         description:
             "Remoção eficaz dos pelos acima dos lábios com total conforto. Pele lisa e aparência impecável em minutos.",
-        image: "https://picsum.photos/600/400?random=3",
+        image: "/images/serviceimg/003/bulco.avif",
         price: "R$ 15,00",
         passos: {
             passo1: {
@@ -90,7 +90,7 @@ export const servicesDetails = {
         title: "Spa dos Lábios",
         description:
             "Hidratação profunda, esfoliação e revitalização labial. Ideal para lábios ressecados ou antes da maquiagem.",
-        image: "https://picsum.photos/600/400?random=4",
+        image: "/images/serviceimg/004/labios.avif",
         price: "R$ 35,00",
         passos: {
             passo1: {
@@ -119,7 +119,7 @@ export const servicesDetails = {
         title: "Maquiagem Social",
         description:
             "Maquiagem elegante e versátil para eventos, festas e ocasiões especiais. Realce sua beleza com sofisticação.",
-        image: "https://picsum.photos/600/400?random=5",
+        image: "/images/serviceimg/005/maquiagem.avif",
         price: "R$ 120,00",
         passos: {
             passo1: {
@@ -148,7 +148,7 @@ export const servicesDetails = {
         title: "Maquiagem Beauty",
         description:
             "Técnicas avançadas e produtos de alta performance para criar um visual impactante com acabamento perfeito.",
-        image: "https://picsum.photos/600/400?random=6",
+        image: "/images/serviceimg/006/maquiagemb.avif",
         price: "R$ 140,00",
         passos: {
             passo1: {
@@ -177,7 +177,7 @@ export const servicesDetails = {
         title: "Reconstrução + Argila",
         description:
             "Tratamento capilar completo com máscara reconstrutora e aplicação de argila branca para nutrição e brilho.",
-        image: "https://picsum.photos/600/400?random=7",
+        image: "/images/serviceimg/007/argila.avif",
         price: "R$ 60,00",
         passos: {
             passo1: {
@@ -206,7 +206,7 @@ export const servicesDetails = {
         title: "Brow Lamination",
         description:
             "Alinhamento dos fios da sobrancelha para um efeito lifting natural, proporcionando mais volume e definição.",
-        image: "https://picsum.photos/600/400?random=8",
+        image: "/images/serviceimg/008/brow.avif",
         price: "R$ 90,00",
         passos: {
             passo1: {
@@ -235,7 +235,7 @@ export const servicesDetails = {
         title: "Babyliss",
         description:
             "Ondas, cachos ou movimento natural nos fios com babyliss profissional. Finalização perfeita para qualquer ocasião.",
-        image: "https://picsum.photos/600/400?random=9",
+        image: "/images/serviceimg/009/babyliss.avif",
         price: "R$ 40,00",
         passos: {
             passo1: {
@@ -264,7 +264,7 @@ export const servicesDetails = {
         title: "Curso de Automaquiagem",
         description:
             "Aprenda técnicas práticas e personalizadas para realçar sua beleza no dia a dia. Ideal para iniciantes ou quem deseja se aperfeiçoar.",
-        image: "https://picsum.photos/600/400?random=10",
+        image: "/placeholder.svg",
         price: "R$ 180,00",
         passos: {
             passo1: {
@@ -293,7 +293,7 @@ export const servicesDetails = {
         title: "Maquiagem Artística",
         description:
             "Criações únicas e ousadas para performances, festas temáticas ou projetos especiais. Liberdade total de expressão.",
-        image: "https://picsum.photos/600/400?random=11",
+        image: "/images/serviceimg/011/art.avif",
         price: "R$ 160,00",
         passos: {
             passo1: {
@@ -322,7 +322,7 @@ export const servicesDetails = {
         title: "Maquiagem Infantil",
         description:
             "Colorida, leve e divertida! Maquiagem segura e adaptada para crianças em festas e eventos especiais.",
-        image: "https://picsum.photos/600/400?random=12",
+        image: "/placeholder.svg",
         price: "R$ 70,00",
         passos: {
             passo1: {

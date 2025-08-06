@@ -5,6 +5,7 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import DecryptedText from './ui/decryptedtext';
 import { Button } from './ui/button';
+import ScrollVelocity from './ui/scrollvelocity';
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -24,7 +25,7 @@ const Spot = ({ service }: { service: any }) => {
     const containersec2 = useRef<HTMLDivElement>(null);
 
   return (
-    <section ref={containersec2} className={`relative h-[350vh] bg-background text-foreground ${cormorantSC.variable} ${montserrat.variable}`}>
+    <section ref={containersec2} className={`relative h-[400vh] bg-background text-foreground ${cormorantSC.variable} ${montserrat.variable}`}>
 
       <div className='flex flex-col justify-around items-center w-[100vw] h-[100vh] my-10'>
         <h2 className={`uppercase tracking-tight text-8xl font-light text-black ${montserrat.className}`}>Qualidade premium</h2>
@@ -109,7 +110,7 @@ const Spot = ({ service }: { service: any }) => {
               </div>
             </div>
             <div className='max-w-[20vw] flex flex-col gap-2 h-full items-center'>
-              <Image src={'/images/pexels-rasul-lotfi-16110887-31845455.avif'} alt='services' width={900} height={900} className='h-full w-auto object-contain' />
+              <Image src={service.image} alt='services' width={900} height={900} className='h-full w-auto object-contain' />
 
               <p className={`text-[0.5rem] text-start ${montserrat.className} uppercase`}>
                 resultados de alta qualidade
@@ -117,9 +118,9 @@ const Spot = ({ service }: { service: any }) => {
             </div>
             <div className='max-w-[20vw] items-center justify-center'>
               <div className='flex gap-0.5 h-full items-center justify-center'>
-                <Image src={'/images/pexels-marcelochagas-2598179.avif'} alt='services' width={900} height={900} className='w-[100px] h-auto object-contain' />
-                <Image src={'/images/pexels-marcelochagas-2598179.avif'} alt='services' width={900} height={900} className='w-[100px] h-auto object-contain' />
-                <Image src={'/images/pexels-marcelochagas-2598179.avif'} alt='services' width={900} height={900} className='w-[100px] h-auto object-contain' />
+                <Image src={'/placeholder.svg'} alt='services' width={900} height={900} className='w-[100px] h-auto object-contain' />
+                <Image src={'/placeholder.svg'} alt='services' width={900} height={900} className='w-[100px] h-auto object-contain' />
+                <Image src={'/placeholder.svg'} alt='services' width={900} height={900} className='w-[100px] h-auto object-contain' />
               </div>
               <p className={`${montserrat.className} uppercase text-end text-[0.6rem] font-normal`}>Materiais usados</p>
             </div>
@@ -210,8 +211,16 @@ const Spot = ({ service }: { service: any }) => {
             </div>
           </div>
         </div>
-
       </div>
+      <ScrollVelocity
+        texts={[
+          'Design Estratégico',
+          'Experiência Premium',
+        ]}
+        velocity={50}
+        className="custom-scroll-text"
+      />
+
 
     </section>
   )
