@@ -139,6 +139,42 @@ body {
   @apply bg-[url('/bg-sec2.avif')] bg-cover bg-center bg-no-repeat;
 }
 
+/* Lightweight "no-js" timeline draw (used inside <noscript>) */
+.nojs-timeline-line path {
+  stroke: var(--foreground);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: nojs-draw 1.6s ease forwards;
+}
+
+@keyframes nojs-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Simple fallback hero reveal for no-js */
+.nojs-hero-title {
+  opacity: 1;
+  transform: none;
+}
+
+/* Minimal aesthetic helpers for placeholders using only the two tokens */
+.placeholder {
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.07);
+  /* small subtle divider using foreground */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+}
+
+/* Small visual focus state (keyboard accessible) */
+.focus-ring:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
 @layer utilities {
   .mask-gradient-top {
     mask-image: linear-gradient(to bottom,
@@ -157,6 +193,14 @@ body {
     -webkit-mask-repeat: no-repeat;
     mask-size: 100% 100%;
     -webkit-mask-size: 100% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
 
