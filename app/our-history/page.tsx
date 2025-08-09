@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Montserrat, Cormorant_SC } from 'next/font/google';
 import gsap from 'gsap';
+import Image from 'next/image';
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -43,51 +44,32 @@ export default function OurHistory() {
             const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             if (reduce) return;
 
-            // utility to split text into spans (letters)
-            function splitToChars(el: HTMLElement) {
-                const text = el.textContent || '';
-                el.innerHTML = ''; // clear
-                const frag = document.createDocumentFragment();
-                for (let char of text) {
-                    const span = document.createElement('span');
-                    span.className = 'char inline-block';
-                    span.textContent = char;
-                    // avoid wrapping spaces with zero-width if needed
-                    if (char === ' ') span.innerHTML = '&nbsp;';
-                    frag.appendChild(span);
-                }
-                el.appendChild(frag);
-                // style: inline-block to allow transform
-                const spans = el.querySelectorAll<HTMLElement>('.char');
-                spans.forEach(s => {
-                    s.style.display = 'inline-block';
-                    s.style.willChange = 'transform, opacity';
-                });
-                return spans;
-            }
-
             ctx = gsap.context(() => {
                 // HERO
-                const titleEl = heroTitleRef.current!;
+                const titleWords = heroTitleRef.current!.querySelectorAll("span");
                 const subtitleEl = heroSubtitleRef.current!;
                 const heroBgEl = heroBgRef.current!;
                 const scrollDot = scrollDotRef.current!;
                 const heroTl = gsap.timeline();
 
-                // split headline into chars
-                const titleChars = splitToChars(titleEl);
-
                 heroTl
                     .fromTo(
-                        titleChars,
-                        { y: 60, opacity: 0, rotationX: -15 },
-                        { y: 0, opacity: 1, rotationX: 0, stagger: 0.03, duration: 0.7, ease: 'power3.out' },
+                        titleWords,
+                        { y: 60, opacity: 0, rotationX: -15, duration: 0.3 },
+                        { y: 0, opacity: 1, rotationX: 0, stagger: 0.1, duration: 1.2, ease: 'power3.out' },
                     )
-                    .from(
+                    .fromTo(
                         subtitleEl,
-                        { y: 18, opacity: 0, duration: 0.8, ease: 'power3.out' },
-                        '-=0.35',
+                        { opacity: 0, duration: 0.8, ease: 'power3.out' },
+                        { opacity: 1 }
+                    )
+                    .fromTo(
+                        scrollDot,
+                        { opacity: 0, y: -5 },
+                        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+                        "-=0.3"
                     );
+                    
 
                 // parallax hero background
                 gsap.to(heroBgEl, {
@@ -150,7 +132,7 @@ export default function OurHistory() {
                         ease: 'power3.out',
                         scrollTrigger: {
                             trigger: item,
-                            start: 'top 85%',
+                            start: 'top 60%',
                             toggleActions: 'play none none none',
                         },
                     });
@@ -164,7 +146,7 @@ export default function OurHistory() {
                         duration: 0.8,
                         scrollTrigger: {
                             trigger: item,
-                            start: 'top 88%',
+                            start: 'top 60%',
                             toggleActions: 'play none none none',
                         },
                     });
@@ -249,14 +231,6 @@ export default function OurHistory() {
         };
     }, []);
 
-    /* ------------------------------
-       Markup: the structure is intentionally very similar to your original.
-       I add specific extra classes/data attributes to target things easily:
-       - .timeline-item wrapper gets data-side for left/right logic (we also add timeline-left in markup)
-       - timeline-icon wrapper and timeline-content / timeline-image to target animations
-       - svg center line is absolute and uses the computed path
-    -------------------------------*/
-
     return (
         <div className={`min-h-screen bg-background text-foreground ${cormorantSC.variable} ${montserrat.variable}`}>
             {/* HERO SECTION */}
@@ -267,9 +241,9 @@ export default function OurHistory() {
                 </div>
 
                 <div className="relative z-10 text-center px-4">
-                    <h1 ref={heroTitleRef} className={`font-cormorant-sc uppercase tracking-[0.35em] text-5xl md:text-8xl font-thin mb-6 text-foreground`}>
-                        <span className="block opacity-0 translate-y-10">Our</span>
-                        <span className="block mt-2 opacity-0 translate-y-10">Journey</span>
+                    <h1 ref={heroTitleRef} className={`flex flex-col font-cormorant-sc uppercase tracking-[0.35em] text-5xl md:text-8xl font-thin mb-6 text-foreground`}>
+                        <span className="block">Nossa</span>
+                        <span className="block mt-2">História</span>
                     </h1>
                     <p ref={heroSubtitleRef} className={`${montserrat.className} font-light text-sm md:text-lg max-w-2xl mx-auto text-foreground/70 tracking-widest opacity-0 translate-y-5`}>
                         A decade of perfecting the art of brows and celebrating natural beauty
@@ -327,8 +301,15 @@ export default function OurHistory() {
                         </div>
 
                         <div className="md:col-span-5 md:col-start-7">
-                            <div className="aspect-video bg-gradient-to-br from-foreground/5 to-foreground/10 border border-foreground/10 rounded-sm overflow-hidden">
-                                {/* Image placeholder */}
+                            <div className="relative aspect-video bg-gradient-to-br from-foreground/5 to-foreground/10 border border-foreground/10 rounded-sm overflow-hidden">
+                                <Image
+                                    src="/placeholder.svg"
+                                    alt="Opening of the first studio in 2012"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
+                                />
                             </div>
                         </div>
                     </div>
@@ -355,8 +336,15 @@ export default function OurHistory() {
                         </div>
 
                         <div className="md:col-span-5 md:col-start-1 order-first md:order-none">
-                            <div className="aspect-video bg-gradient-to-bl from-foreground/5 to-foreground/10 border border-foreground/10 rounded-sm overflow-hidden">
-                                {/* Image placeholder */}
+                            <div className="relative aspect-video bg-gradient-to-bl from-foreground/5 to-foreground/10 border border-foreground/10 rounded-sm overflow-hidden">
+                                <Image
+                                    src="/placeholder.svg"
+                                    alt="Opening of the first studio in 2012"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
+                                />
                             </div>
                         </div>
                     </div>
@@ -383,8 +371,15 @@ export default function OurHistory() {
                         </div>
 
                         <div className="md:col-span-5 md:col-start-7">
-                            <div className="aspect-video bg-gradient-to-br from-foreground/5 to-foreground/10 border border-foreground/10 rounded-sm overflow-hidden">
-                                {/* Image placeholder */}
+                            <div className="relative aspect-video bg-gradient-to-br from-foreground/5 to-foreground/10 border border-foreground/10 rounded-sm overflow-hidden">
+                                <Image
+                                    src="/placeholder.svg"
+                                    alt="Opening of the first studio in 2012"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
+                                />
                             </div>
                         </div>
                     </div>
@@ -396,8 +391,15 @@ export default function OurHistory() {
                 <div className="max-w-7xl mx-auto px-4 md:px-8">
                     <div className="grid md:grid-cols-12 gap-16 items-center">
                         <div className="md:col-span-6">
-                            <div className="aspect-[4/5] bg-gradient-to-tr from-foreground/5 to-foreground/10 border border-foreground/10 rounded-sm overflow-hidden">
-                                {/* Image placeholder */}
+                            <div className="relative aspect-[4/5] bg-gradient-to-tr from-foreground/5 to-foreground/10 border border-foreground/10 rounded-sm overflow-hidden">
+                                <Image
+                                    src="/placeholder.svg"
+                                    alt="Opening of the first studio in 2012"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
+                                />
                             </div>
                         </div>
 
@@ -460,9 +462,18 @@ export default function OurHistory() {
                     {[1, 2, 3, 4].map((n) => (
                         <div key={n} className="group team-card">
                             <div className="relative overflow-hidden mb-6 aspect-square">
-                                <div className="w-full h-full bg-gradient-to-br from-foreground/5 to-foreground/10 border border-foreground/10 team-img" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end items-center p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 team-overlay">
-                                    <p className={`${montserrat.className} text-center text-sm text-background opacity-90 mb-4`}>
+                                <div className="w-full h-full bg-gradient-to-br from-foreground/5 to-foreground/10 border border-foreground/10 team-img">
+                                    <Image
+                                        src="/placeholder.svg"
+                                        alt="Opening of the first studio in 2012"
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                        priority
+                                    />
+                                </div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black to-background flex flex-col justify-end items-center p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 team-overlay">
+                                    <p className={`${montserrat.className} text-center text-sm text-foreground opacity-90 mb-4`}>
                                         Certified Master Artist with 8 years of experience specializing in microblading and brow lamination
                                     </p>
                                     <div className="w-8 h-px bg-background/50 mb-4"></div>
