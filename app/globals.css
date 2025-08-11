@@ -129,6 +129,10 @@ body {
   cursor: url('/arrow-right-cursor.svg') 18 18, auto;
 }
 
+canvas {
+  pointer-events: none !important;
+}
+
 /* globals.css ou styles globais */
 .btn-3d-shadow {
   box-shadow: -4px 4px 0 0 black;

@@ -102,17 +102,23 @@ export default function Navbar() {
                                     <Link href="#">INSTAGRAM</Link>
                                 </div>
                                 <nav className="flex flex-col gap-2 lg:text-lg text-sm">
-                                    <Link href="#" onClick={() => setIsOpen(false)}>/ NOSSA HISTÓRIA</Link>
-                                    <Link href="#" onClick={() => setIsOpen(false)}>/ JORNAL</Link>
-                                    <Link href="#" onClick={() => setIsOpen(false)}>/ LOCALIZAÇÃO</Link>
-                                    <Link href="#services" onClick={() => setIsOpen(false)}>/ SERVIÇOS</Link>
+                                    <Link href="/our-history" onClick={() => setIsOpen(false)}>/ NOSSA HISTÓRIA</Link>
+                                    <Link href="newsletter" onClick={() => setIsOpen(false)}>/ Newsletter</Link>
+                                    <Link href="/loc" onClick={() => setIsOpen(false)}>/ LOCALIZAÇÃO</Link>
+                                    <Link href="/services/001" onClick={() => setIsOpen(false)}>/ SERVIÇOS</Link>
                                 </nav>
                             </div>
                             <div className="mt-8">
                                 <p className="font-bold text-sm mb-2">AGENDAMENTO</p>
                                 <nav className="flex flex-col gap-2 lg:text-sm text-xs">
-                                    <Link href="#">/ AGENDAR VIA WHATSAPP</Link>
-                                    <Link href="#">/ AGENDAR VIA TELEFONE</Link>
+                                    <Link 
+                                    href={`https://wa.me/5581997147184?text=${encodeURIComponent(
+                                        `Olá, tudo bem? 👋\n\nEstou visitando seu site e me interessei por um serviço\nGostaria de saber mais informações, por favor.`
+                                    )}`} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer">/ AGENDAR VIA WHATSAPP</Link>
+
+                                    <Link href="tel:+5599123456789">/ AGENDAR VIA TELEFONE</Link>
                                 </nav>
                                 <div className="flex flex-col lg:flex-row gap-5 items-start lg:items-end my-6 ">
                                     <Image
