@@ -1,6 +1,5 @@
 import Why from '@/components/Why';
 import Hero from '@/components/Hero';
-import Price from '@/components/Price';
 
 const HomePage = () => {
   return (
@@ -9,8 +8,6 @@ const HomePage = () => {
       <Hero />
 
       <Why />
-
-      <Price />
 
     </main>
   );

@@ -28,7 +28,9 @@ export default function RootLayout({
         className='font-serif scroll-smooth'
       >
         <Navbar />
-        {children}
+        <main className="flex-grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

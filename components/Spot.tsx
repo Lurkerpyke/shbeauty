@@ -27,7 +27,7 @@ const Spot = ({ service }: { service: any }) => {
   return (
     <section
       ref={containersec2}
-      className={`relative h-[600vh] md:h-[400vh] bg-background text-foreground ${cormorantSC.variable} ${montserrat.variable}`}
+      className={`relative h-[500vh] md:h-[400vh] bg-background text-foreground ${cormorantSC.variable} ${montserrat.variable}`}
     >
       {/* primeira sessão */}
       <div className="h-[200vh] flex flex-col justify-around items-center w-screen md:h-auto min-h-screen my-10 px-4">
