@@ -6,6 +6,9 @@ import Image from 'next/image';
 import DecryptedText from './ui/decryptedtext';
 import { Button } from './ui/button';
 import ScrollVelocity from './ui/scrollvelocity';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import BeeTrail from './ui/beetrail';
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -22,12 +25,12 @@ const cormorantSC = Cormorant_SC({
 
 const Spot = ({ service }: { service: any }) => {
 
-    const containersec2 = useRef<HTMLDivElement>(null);
+  const containersec2 = useRef<HTMLDivElement>(null);
 
   return (
     <section
       ref={containersec2}
-      className={`relative h-[500vh] md:h-[400vh] bg-background text-foreground ${cormorantSC.variable} ${montserrat.variable}`}
+      className={`relative h-[555vh] md:h-[400vh] lg:[350vh] bg-background text-foreground ${cormorantSC.variable} ${montserrat.variable}`}
     >
       {/* primeira sessão */}
       <div className="h-[200vh] flex flex-col justify-around items-center w-screen md:h-auto min-h-screen my-10 px-4">
@@ -262,8 +265,10 @@ const Spot = ({ service }: { service: any }) => {
         velocity={50}
         className="custom-scroll-text"
       />
-
-
+      {/* Animação para desenvolver */}
+      {/* <div className="w-full h-full">
+        <BeeTrail />
+      </div> */}
     </section>
   )
 };

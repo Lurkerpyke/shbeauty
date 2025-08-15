@@ -430,7 +430,7 @@ export default function OurHistory() {
                     >
                         <div className="text-center mb-12">
                             <h2 id="timeline-title" className="uppercase text-[var(--step-2)] font-light tracking-[0.18em]">
-                                Shaping Beauty Through Time
+                                Moldando a Beleza Através do Tempo
                             </h2>
                             <div className="w-24 h-px bg-[linear-gradient(90deg,transparent,rgba(0,0,0,0.12),transparent)] mx-auto mt-4" />
                         </div>
@@ -468,9 +468,9 @@ export default function OurHistory() {
                                             2012
                                         </time>
                                     </div>
-                                    <h3 className="text-[var(--step-1)] font-normal mb-3 leading-tight">The First Studio</h3>
+                                    <h3 className="text-[var(--step-1)] font-normal mb-3 leading-tight">O Primeiro Estúdio</h3>
                                     <p className={`${montserrat.className} text-[var(--step-0)] max-w-md opacity-90`}>
-                                        Our founder opened a small studio with a vision to transform eyebrow artistry. Starting with just two chairs, she pioneered the natural brow movement.
+                                        Nossa fundadora abriu um pequeno estúdio com a visão de transformar a arte das sobrancelhas. Começando com apenas duas cadeiras, ela foi pioneira no movimento das sobrancelhas naturais.
                                     </p>
                                 </div>
 
@@ -511,7 +511,7 @@ export default function OurHistory() {
                                     </div>
                                     <h3 className="text-[var(--step-1)] font-normal mb-3 leading-tight">Signature Technique</h3>
                                     <p className={`${montserrat.className} text-[var(--step-0)] max-w-md opacity-90`}>
-                                        After years of research, we developed our signature "Feather & Flow" technique. This innovative approach earned us the National Beauty Innovation Award.
+                                        Após anos de pesquisa, desenvolvemos nossa técnica exclusiva "Feather & Flow". Essa abordagem inovadora nos rendeu o Prêmio Nacional de Inovação em Beleza.
                                     </p>
                                 </div>
 
@@ -549,9 +549,9 @@ export default function OurHistory() {
                                             2020
                                         </time>
                                     </div>
-                                    <h3 className="text-[var(--step-1)] font-normal mb-3 leading-tight">Global Recognition</h3>
+                                    <h3 className="text-[var(--step-1)] font-normal mb-3 leading-tight">Reconhecimento Global</h3>
                                     <p className={`${montserrat.className} text-[var(--step-0)] max-w-md opacity-90`}>
-                                        Our work was featured in Vogue Beauty and Harper's Bazaar. We began training artists worldwide, establishing our academy to share our philosophy.
+                                        Nosso trabalho foi destaque na Vogue Beauty e na Harper Bazaar. Passamos a treinar artistas no mundo inteiro, criando nossa academia para compartilhar nossa filosofia.
                                     </p>
                                 </div>
 
@@ -602,7 +602,7 @@ export default function OurHistory() {
 
                                 <div className="md:col-span-6">
                                     <div className="mb-8">
-                                        <h2 className="text-[var(--step-3)] font-light mb-3">Our Philosophy</h2>
+                                        <h2 className="text-[var(--step-3)] font-light mb-3">Nossa Filosofia</h2>
                                         <div className="w-32 h-px bg-[rgba(0,0,0,0.08)]" />
                                     </div>
 
@@ -610,30 +610,30 @@ export default function OurHistory() {
                                         <div>
                                             <div className="flex items-center gap-3 mb-3">
                                                 <div className="w-8 h-px bg-[rgba(0,0,0,0.18)]" />
-                                                <h3 className={`${montserrat.className} uppercase text-sm font-semibold`}>Natural Enhancement</h3>
+                                                <h3 className={`${montserrat.className} uppercase text-sm font-semibold`}>Realce Natural</h3>
                                             </div>
                                             <p className={`${montserrat.className} text-[var(--step-0)] opacity-90`}>
-                                                We believe in enhancing your natural features rather than creating artificial shapes. Each brow design is meticulously crafted to complement your unique facial structure.
+                                                Acreditamos em realçar suas características naturais em vez de criar formas artificiais. Cada design de sobrancelha é meticulosamente elaborado para complementar sua estrutura facial única.
                                             </p>
                                         </div>
 
                                         <div>
                                             <div className="flex items-center gap-3 mb-3">
                                                 <div className="w-8 h-px bg-[rgba(0,0,0,0.18)]" />
-                                                <h3 className={`${montserrat.className} uppercase text-sm font-semibold`}>Precision & Artistry</h3>
+                                                <h3 className={`${montserrat.className} uppercase text-sm font-semibold`}>Precisão & Arte</h3>
                                             </div>
                                             <p className={`${montserrat.className} text-[var(--step-0)] opacity-90`}>
-                                                Every stroke is intentional. Our artists train for over 500 hours to master the delicate balance between symmetry, proportion, and personal expression.
+                                                Cada traço é intencional. Nossos artistas treinam por mais de 500 horas para dominar o delicado equilíbrio entre simetria, proporção e expressão pessoal.
                                             </p>
                                         </div>
 
                                         <div>
                                             <div className="flex items-center gap-3 mb-3">
                                                 <div className="w-8 h-px bg-[rgba(0,0,0,0.18)]" />
-                                                <h3 className={`${montserrat.className} uppercase text-sm font-semibold`}>Sustainable Beauty</h3>
+                                                <h3 className={`${montserrat.className} uppercase text-sm font-semibold`}>Beleza Sustentável</h3>
                                             </div>
                                             <p className={`${montserrat.className} text-[var(--step-0)] opacity-90`}>
-                                                We're committed to eco-conscious practices, from our cruelty-free products to our waste-reduction initiatives. Beauty should honor both people and planet.
+                                                Estamos comprometidos com práticas ecológicas, desde nossos produtos livres de crueldade até nossas iniciativas de redução de resíduos. A beleza deve honrar tanto as pessoas quanto o planeta.
                                             </p>
                                         </div>
                                     </div>
@@ -645,8 +645,8 @@ export default function OurHistory() {
                     {/* TEAM */}
                     <section ref={teamRef} className="py-20 px-4 md:px-8 max-w-7xl mx-auto" aria-labelledby="team-title">
                         <div className="text-center mb-10">
-                            <h2 id="team-title" className="text-[var(--step-2)] font-light uppercase tracking-[0.18em]">The Artists Behind the Brows</h2>
-                            <p className={`${montserrat.className} text-[var(--step-0)] max-w-2xl mx-auto mt-3`} >Our team of certified brow artists brings together decades of experience and a shared passion for perfection</p>
+                            <h2 id="team-title" className="text-[var(--step-2)] font-light uppercase tracking-[0.18em]">Os Artistas por Trás das Sobrancelhas</h2>
+                            <p className={`${montserrat.className} text-[var(--step-0)] max-w-2xl mx-auto mt-3`} >Nossa equipe de artistas de sobrancelhas certificados reúne décadas de experiência e uma paixão compartilhada pela perfeição</p>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -675,7 +675,7 @@ export default function OurHistory() {
                                             aria-hidden="true"
                                         >
                                             <p className={`${montserrat.className} text-center text-sm text-white mb-3`}>
-                                                Certified Master Artist with 8 years of experience specializing in microblading and brow lamination
+                                                Artista Mestre Certificada com 8 anos de experiência, especializada em microblading e laminação de sobrancelhas
                                             </p>
                                             <div className="flex gap-3">
                                                 <a href="#" aria-label="Instagram" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-xs">IG</a>
@@ -685,7 +685,7 @@ export default function OurHistory() {
                                     </div>
 
                                     <h3 id={`team-${n}-name`} className="text-lg font-normal mb-1">Elena Rossi</h3>
-                                    <p className={`${montserrat.className} text-xs tracking-[0.18em] uppercase`}>Founder & Creative Director</p>
+                                    <p className={`${montserrat.className} text-xs tracking-[0.18em] uppercase`}>Fundadora & Diretora Criativa</p>
                                 </article>
                             ))}
                         </div>
@@ -695,11 +695,11 @@ export default function OurHistory() {
                     <section ref={ctaRef} className="py-20">
                         <div className="max-w-4xl mx-auto px-4 text-center">
                             <h2 className="text-[var(--step-3)] font-light mb-6">
-                                <span className="block">Become Part</span>
-                                <span className="block">Of Our Story</span>
+                                <span className="block text-xl">Seja Parte</span>
+                                <span className="block mb-6 text-xl">Da Nossa História</span>
                             </h2>
                             <p className={`${montserrat.className} text-[var(--step-0)] max-w-2xl mx-auto mb-8`}>
-                                Experience the difference of artistry crafted over a decade. Book your bespoke brow transformation today.
+                                Experimente a diferença da arte criada ao longo de uma década. Agende sua transformação de sobrancelhas sob medida hoje.
                             </p>
 
                             <button
@@ -714,7 +714,7 @@ export default function OurHistory() {
                                     boxShadow: '0px 8px 18px rgba(0,0,0,0.06)',
                                 }}
                             >
-                                <span style={{ position: 'relative', zIndex: 2 }}>Book Consultation</span>
+                                <span style={{ position: 'relative', zIndex: 2 }}>Agendar Consulta</span>
                                 {/* decorative overlay (non-interactive) */}
                                 <span aria-hidden="true" style={{ position: 'absolute', inset: 0, opacity: 0.06, background: 'linear-gradient(90deg, transparent, #ffffff)' }} />
                             </button>

@@ -3,16 +3,7 @@ import { ServiceId, servicesDetails } from '@/data/services';
 import { notFound } from 'next/navigation';
 import ServiceDetails from './ServicesDetails';
 import Spot from '@/components/Spot';
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator
-} from '@/components/ui/breadcrumb';
-import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
+import BreadCrumbUp from '@/components/BreadCrumbUp';
 
 type Params = { params: Promise<{ id: string }> };
 
@@ -38,48 +29,16 @@ export default async function ServicePage(props: Params) {
 
     const currentIndex = allServices.findIndex(s => s.id === id);
     const nextService = allServices[currentIndex + 1];
-    const previousService = allServices[currentIndex - 1];
 
     return (
-        <main className='overflow-hidden'>
+        <main className='overflow-hidden h-full flex flex-col'>
             <ServiceDetails service={servico} />
             <Spot service={servico} />
 
-            <div className="container mx-auto px-4 py-6">
-                <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink asChild>
-                                <Link href="/">Home</Link>
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator>
-                            <ChevronRight className="h-4 w-4" />
-                        </BreadcrumbSeparator>
-                        <BreadcrumbItem>
-                            <BreadcrumbPage>{servico.title}</BreadcrumbPage>
-                        </BreadcrumbItem>
-
-                        {nextService && (
-                            <>
-                                <BreadcrumbSeparator>
-                                    <ChevronRight className="h-4 w-4" />
-                                </BreadcrumbSeparator>
-                                <BreadcrumbItem>
-                                    <BreadcrumbLink asChild>
-                                        <Link
-                                            href={`/services/${nextService.id}`}
-                                            className="font-medium text-primary hover:underline"
-                                        >
-                                            {nextService.title}
-                                        </Link>
-                                    </BreadcrumbLink>
-                                </BreadcrumbItem>
-                            </>
-                        )}
-                    </BreadcrumbList>
-                </Breadcrumb>
-            </div>
+            <BreadCrumbUp 
+                servico={servico}
+                nextService={nextService}
+            />
         </main>
     );
 };
