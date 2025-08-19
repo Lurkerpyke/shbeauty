@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { Montserrat, Cormorant_SC } from 'next/font/google';
 import gsap from 'gsap';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
 /**
  * OurHistory — a full rewrite focused on typography, UX, performance and accessibility.
@@ -402,7 +403,7 @@ export default function OurHistory() {
                             className="mt-6 max-w-2xl mx-auto text-[var(--step-0)] leading-[1.6] opacity-90"
                             style={{ fontFamily: 'var(--font-body)' }}
                         >
-                            Uma década aperfeiçoando a arte das sobrancelhas e celebrando a beleza natural
+                            aperfeiçoando a arte das sobrancelhas e celebrando a beleza natural
                         </p>
                     </div>
 
@@ -465,7 +466,7 @@ export default function OurHistory() {
                                 <div className="md:col-span-5 md:col-start-1 flex flex-col items-end text-right timeline-content">
                                     <div className="mb-2">
                                         <time className={`${montserrat.className} text-xs font-semibold tracking-[0.28em] uppercase`} dateTime="2012">
-                                            2012
+                                            Início 2024
                                         </time>
                                     </div>
                                     <h3 className="text-[var(--step-1)] font-normal mb-3 leading-tight">O Primeiro Estúdio</h3>
@@ -506,7 +507,7 @@ export default function OurHistory() {
                                 <div className="md:col-span-5 md:col-start-7 flex flex-col items-start timeline-content">
                                     <div className="mb-2">
                                         <time className={`${montserrat.className} text-xs font-semibold tracking-[0.28em] uppercase`} dateTime="2016">
-                                            2016
+                                            08/2024
                                         </time>
                                     </div>
                                     <h3 className="text-[var(--step-1)] font-normal mb-3 leading-tight">Signature Technique</h3>
@@ -546,7 +547,7 @@ export default function OurHistory() {
                                 <div className="md:col-span-5 md:col-start-1 flex flex-col items-end text-right timeline-content">
                                     <div className="mb-2">
                                         <time className={`${montserrat.className} text-xs font-semibold tracking-[0.28em] uppercase`} dateTime="2020">
-                                            2020
+                                            Início 2025
                                         </time>
                                     </div>
                                     <h3 className="text-[var(--step-1)] font-normal mb-3 leading-tight">Reconhecimento Global</h3>
@@ -699,10 +700,10 @@ export default function OurHistory() {
                                 <span className="block mb-6 text-xl">Da Nossa História</span>
                             </h2>
                             <p className={`${montserrat.className} text-[var(--step-0)] max-w-2xl mx-auto mb-8`}>
-                                Experimente a diferença da arte criada ao longo de uma década. Agende sua transformação de sobrancelhas sob medida hoje.
+                                Experimente a diferença da arte criada ao longo do tempo. Agende sua transformação de sobrancelhas sob medida hoje.
                             </p>
 
-                            <button
+                            <Button
                                 ref={btnRef}
                                 type="button"
                                 className={`${montserrat.className} relative inline-flex items-center justify-center px-8 py-4 uppercase tracking-[0.28em] text-sm font-medium rounded-md`}
@@ -713,11 +714,14 @@ export default function OurHistory() {
                                     minWidth: '240px',
                                     boxShadow: '0px 8px 18px rgba(0,0,0,0.06)',
                                 }}
+                                asChild
                             >
-                                <span style={{ position: 'relative', zIndex: 2 }}>Agendar Consulta</span>
-                                {/* decorative overlay (non-interactive) */}
-                                <span aria-hidden="true" style={{ position: 'absolute', inset: 0, opacity: 0.06, background: 'linear-gradient(90deg, transparent, #ffffff)' }} />
-                            </button>
+                                <a href="https://wa.me/5581997147184?text=Olá,%20tudo%20bem?%20👋%0A%0AEstou%20visitando%20seu%20site%20e%20me%20interessei%20por%20um%20serviço.%0AGostaria%20de%20saber%20mais%20informações,%20por%20favor." target="_blank" rel="noopener noreferrer">
+                                    <span style={{ position: 'relative', zIndex: 2 }}>Agendar Consulta</span>
+                                    {/* decorative overlay (non-interactive) */}
+                                    <span aria-hidden="true" style={{ position: 'absolute', inset: 0, opacity: 0.06, background: 'linear-gradient(90deg, transparent, #ffffff)' }} />
+                                </a>
+                            </Button>
                         </div>
                     </section>
                 </main>

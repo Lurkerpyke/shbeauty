@@ -1,12 +1,55 @@
 "use client";
 
+/**
+ * @module Coming
+ * @description
+ * Componente de página "Em construção" para Next.js, estilizado e animado.
+ * Exibe uma mensagem informando que a página está em desenvolvimento, com animações GSAP,
+ * fontes personalizadas do Google Fonts, e um background interativo (Ballpit) em desktops.
+ *
+ * ## Dependências
+ * - React (hooks: useEffect, useRef, useState)
+ * - next/dynamic (para importação dinâmica do Ballpit, evitando SSR issues)
+ * - next/font/google (para fontes Cormorant_SC e Montserrat)
+ * - gsap (para animações)
+ * - next/link (para navegação interna)
+ *
+ * ## Props
+ * @typedef {Object} ComingProps
+ * @property {string} [title] - Título principal exibido na página. Default: "Were creating something beautiful"
+ * @property {string} [subtitle] - Subtítulo explicativo. Default: "This page is under construction — check back soon."
+ * @property {string} [eta] - Informação de previsão de lançamento. Default: "Launching soon"
+ * @property {string} [note] - Nota ou link para atualizações. Default: "Subscribe for updates"
+ *
+ * ## Uso
+ * ```tsx
+ * import Coming from "./components/comming";
+ * 
+ * export default function Page() {
+ *   return <Coming title="Novo site em breve" subtitle="Aguarde novidades!" />;
+ * }
+ * ```
+ *
+ * ## Observações
+ * - O Ballpit (background animado) só aparece em telas desktop (>= 1024px) e pode ser encontrado no site https://www.reactbits.dev/backgrounds/ballpit.
+ * - Animações são desativadas se o usuário preferir "reduzir movimento" (acessibilidade).
+ * - O componente utiliza CSS-in-JS via `<style jsx>`.
+ * - Para funcionamento correto, instale as dependências:
+ *   - `npm install gsap next`
+ *   - As fontes são carregadas via `next/font/google`.
+ *
+ * @component
+ * @param {ComingProps} props
+ * @returns
+ */
+
 import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { Cormorant_SC, Montserrat } from "next/font/google";
 import gsap from "gsap";
 import Link from "next/link";
 
-// dynamic import: evita problemas com SSR (window/document)
+// evita problemas com SSR (window/document)
 const Ballpit = dynamic(() => import("./ui/ballpit"), { ssr: false });
 
 const cormorantSC = Cormorant_SC({
@@ -105,7 +148,6 @@ export default function Coming({
     return (
         <main
             ref={rootRef}
-            // importante: criar contexto de empilhamento com z-0
             className={`relative z-0 min-h-screen flex items-center justify-center bg-gradient-to-b from-white via-slate-50 to-white px-6 py-12 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 ${monserrat.variable} ${cormorantSC.variable}`}
             style={{ minHeight: "100vh" }}
         >
@@ -132,14 +174,13 @@ export default function Coming({
                 </div>
             )}
 
-
             {/* conteúdo (sempre acima do background) */}
             <section
                 aria-live="polite"
                 className="relative z-10 w-full max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
             >
-                {/* ... (resto do seu markup — igual ao original) */}
-                {/* Left: Decorative SVG */}
+                {/* Coluna da Esquerda */}
+                {/* SVG */}
                 <div className="md:col-span-7 flex items-center justify-center">
                     <div className="relative w-full max-w-xl">
                         <svg
@@ -161,7 +202,7 @@ export default function Coming({
                                 </linearGradient>
                             </defs>
 
-                            {/* glassy amorph blob */}
+                            {/* Bola curva*/}
                             <g transform="translate(100,60)">
                                 <path
                                     d="M97.2,-68.2C123.2,-46.5,136.3,-13,124.8,15.6C113.3,44.1,77.1,66.6,41.7,80.2C6.3,93.8,-28.3,98.6,-58.5,85.1C-88.8,71.6,-114.7,39.9,-118.4,6.3C-122.1,-27.3,-103.7,-61.8,-74.1,-83.7C-44.4,-105.6,-22.2,-114.9,6.8,-121.1C35.8,-127.3,71.6,-130,97.2,-68.2Z"
@@ -177,7 +218,7 @@ export default function Coming({
                                     opacity="0.18"
                                 />
 
-                                {/* precision lines */}
+                                {/* Linhas de precisão */}
                                 <g opacity="0.65">
                                     <circle cx="420" cy="110" r="54" fill="none" stroke="rgba(99,102,241,0.12)" strokeWidth="2" />
                                     <circle cx="520" cy="220" r="8" fill="#6366f1" />
@@ -187,14 +228,15 @@ export default function Coming({
 
                         <div className="absolute bottom-6 left-4 md:left-8 backdrop-blur-md bg-white/60 dark:bg-slate-900/50 rounded-2xl p-4 shadow-lg border border-transparent dark:border-white/5">
                             <div className="text-xs uppercase tracking-widest font-medium text-slate-500">{eta}</div>
-                            <Link href={note} target="_blank" rel="noopener noreferrer" className="break-all mt-1 text-sm font-semibold text-slate-900 dark:text-white">
+                            <a href={note} target="_blank" rel="noopener noreferrer" className="break-all mt-1 text-sm font-semibold text-slate-900 dark:text-white">
                                 {note}
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                {/* Right: Text Content */}
+                {/* Coluna da Direita */}
+                {/* Conteúdo */}
                 <div className="md:col-span-5 flex flex-col justify-center gap-6">
                     <h1 ref={headlineRef} className={`leading-tight text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-extralight text-slate-900 dark:text-white ${cormorantSC.className}`} style={{ fontWeight: 300 }}>
                         <span className="block">{title.split(" ").slice(0, 3).join(" ")}</span>
@@ -232,8 +274,10 @@ export default function Coming({
                 </div>
             </section>
 
-            <span className="sr-only">This page is under construction</span>
+            {/* Acessibilidade para leitor de tela */}
+            <span className="sr-only">Esta página está em construção</span>
 
+            {/* Estilo e Animação aplicado em js */}
             <style jsx>{`
         :root {
           --font-cormorant-sc: ${cormorantSC.style?.fontFamily || "'Cormorant SC', serif"};

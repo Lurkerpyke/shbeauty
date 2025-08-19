@@ -111,14 +111,14 @@ export default function Navbar() {
                             <div className="mt-8">
                                 <p className="font-bold text-sm mb-2">AGENDAMENTO</p>
                                 <nav className="flex flex-col gap-2 lg:text-sm text-xs">
-                                    <Link 
+                                    <a 
                                     href={`https://wa.me/5581997147184?text=${encodeURIComponent(
                                         `Olá, tudo bem? 👋\n\nEstou visitando seu site e me interessei por um serviço\nGostaria de saber mais informações, por favor.`
                                     )}`} 
                                     target="_blank" 
-                                    rel="noopener noreferrer">/ AGENDAR VIA WHATSAPP</Link>
+                                    rel="noopener noreferrer">/ AGENDAR VIA WHATSAPP</a>
 
-                                    <Link href="tel:+5599123456789">/ AGENDAR VIA TELEFONE</Link>
+                                    <a href="tel:+5599123456789">/ AGENDAR VIA TELEFONE</a>
                                 </nav>
                                 <div className="flex flex-col lg:flex-row gap-5 items-start lg:items-end my-6 ">
                                     <Image
@@ -133,8 +133,9 @@ export default function Navbar() {
                                             variant={'default'}
                                             size="lg"
                                             className="h-full px-6 py-4 bg-black text-white border border-white rounded-none text-lg flex items-center justify-center row-span-2"
+                                            asChild
                                         >
-                                            CONTATE-NOS
+                                            <a href="https://wa.me/5581997147184?text=Olá,%20tudo%20bem?%20👋%0A%0AEstou%20visitando%20seu%20site%20e%20me%20interessei%20por%20um%20serviço.%0AGostaria%20de%20saber%20mais%20informações,%20por%20favor." target="_blank" rel="noopener noreferrer">CONTATE-NOS</a>
                                         </Button>
                                     </div>
                                 </div>
