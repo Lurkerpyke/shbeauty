@@ -9,7 +9,15 @@ const HomePage = () => {
 
       <Why />
 
-      <Hero numero='002' servico='Maquiagem' subtitulo='Mostre o que você tem de melhor' paragrafo='lorem ipson dolor uialiuia liyavwudva lauyvwd aluyalwdu liyal alyuw whlau  aiy wdlh a aiwyd alyud ia diai kaowvlyw lyapwuday iaiv 9ua duai oua d , liauwd kubaj dajçi f. iaçjaljbf  lalma.açi fboajma~kof, uabiu aobufuuw liayvi' srcImage='/images/pexels-cottonbro-4056467.avif' inverse />
+      <Hero
+        numero="002"
+        servico="Maquiagem Profissional"
+        subtitulo="Realce sua beleza com técnica e sofisticação"
+        paragrafo="Nossa maquiagem profissional é pensada para valorizar seus traços naturais, respeitando seu estilo e a ocasião. Trabalhamos com produtos de alta qualidade, técnicas atualizadas e acabamento impecável, garantindo durabilidade, conforto e um visual elegante. Seja para eventos, ensaios fotográficos, formaturas ou ocasiões especiais, cada detalhe é cuidadosamente planejado para que você se sinta confiante, segura e ainda mais bonita."
+        srcImage="/images/pexels-cottonbro-4056467.avif"
+        inverse
+      />
+
 
     </main>
   );
