@@ -26,7 +26,7 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Left Column - Brand & Social */}
                     <div className="space-y-4">
-                        <h2 className={`${cormorantSC.className} text-4xl font-bold`}>SH BEAUTY</h2>
+                        <h2 className={`${cormorantSC.className} text-4xl font-bold uppercase`}>beauty studio</h2>
                         <p className="text-2xl uppercase">Let&apos;s make your dream come true.</p>
                         <div className="flex gap-4">
                             <Link href="https://instagram.com" className="flex flex-col items-center justify-center gap-1 hover:text-neutral-300 transition">

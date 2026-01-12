@@ -23,9 +23,17 @@ const monserrat = Montserrat({
     display: 'swap',
 });
 
+interface props {
+    numero: string;
+    servico: string;
+    paragrafo: string;
+    srcImage: string;
+    inverse?: boolean;
+}
+
 gsap.registerPlugin(ScrollTrigger);
 
-const Hero = () => {
+const Hero = ({ numero, servico, paragrafo, srcImage, inverse=false }: props) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
 
@@ -35,6 +43,7 @@ const Hero = () => {
         const texts = gsap.utils.toArray('.texto');
 
         if (window.innerWidth >= 768) {
+            // CORREÇÃO: Lógica da animação corrigida
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
@@ -52,14 +61,15 @@ const Hero = () => {
                 ease: "none",
             }, 0);
 
+            // Quando inverse = true, a animação deve mover para a direita (xPercent positivo)
             tl.to(imageRef.current, {
                 scale: 2,
                 duration: 1.5,
-                xPercent: -50,
+                xPercent: inverse ? 50 : -50, // CORREÇÃO: Mantém a lógica original
                 ease: "none",
             }, 0);
         } else {
-            // Animação para mobile
+            // Animação para mobile (mantida igual)
             const tlMobile = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
@@ -85,7 +95,7 @@ const Hero = () => {
                 ease: "none",
             }, 0);
         }
-    }, []);
+    }, [inverse]);
 
     return (
         <section ref={containerRef} className="h-[100vh] overflow-hidden relative pt-15 lg:pt-0 bg-background">
@@ -94,41 +104,52 @@ const Hero = () => {
                     text="QUALIDADE*QUALIDADE*"
                     onHover="speedUp"
                     spinDuration={20}
-                    className="absolute left-1/2 top-10 sm:top-20 translate-x-[-50%] texto hidden md:block"
+                    className="absolute left-1/2 top-10 sm:top-20 translate-x-[-50%] texto hidden md:block z-50"
                 />
 
-                <div className="flex flex-col gap-2 md:gap-5 px-6 md:px-20 z-10 relative">
-                    <div className="flex gap-3 sm:gap-5 items-center">
-                        <p className={`${monserrat.className} tracking-normal text-xl sm:text-3xl texto font-thin`}>001</p>
-                        <span className={`${cormorantSC.className} translate-y-0.5 texto tracking-widest font-bold text-lg sm:text-2xl`}>
-                            SH BEAUTY
-                        </span>
-                    </div>
+                {/* CORREÇÃO: Reestruturação do layout para garantir alinhamento correto */}
+                <div className="relative h-full flex md:flex-row flex-col">
+                    {/* Container do texto - sempre ocupa metade da tela no desktop */}
+                    <div className={`md:w-1/2 flex items-center justify-center ${inverse ? 'md:order-2' : ''}`}>
+                        <div className={`flex flex-col gap-2 md:gap-5 px-6 md:px-20 z-10 w-full ${inverse ? 'md:text-right md:items-end' : ''}`}>
+                            <div className={`flex ${inverse ? 'justify-end' : ''} gap-3 sm:gap-5 items-center`}>
+                                <p className={`${monserrat.className} tracking-normal text-xl sm:text-3xl texto font-thin`}>{numero}</p>
+                                <span className={`${cormorantSC.className} translate-y-0.5 texto tracking-widest font-bold text-lg sm:text-2xl`}>
+                                    BEAUTY STUDIO
+                                </span>
+                            </div>
 
-                    <h1 className={`${cormorantSC.className} font-medium texto uppercase tracking-tight text-3xl sm:text-7xl`}>
-                        Sobrancelhas
-                    </h1>
+                            <h1 className={`${cormorantSC.className} font-medium texto uppercase tracking-tight text-3xl sm:text-7xl`}>
+                                {servico}
+                            </h1>
 
-                    <div className="flex w-full">
-                        <div className="flex flex-col gap-5 max-w-full sm:max-w-[40vw]">
-                            <h3 className={`${monserrat.className} capitalize text-md sm:text-xl texto font-normal`}>
-                                Feito para o seu olhar. Pensado para ser só seu.
-                            </h3>
-                            <p className={`${monserrat.className}  text-sm sm:text-md texto leading-6 font-light`}>
-                                Cada design é mapeado para se ajustar ao formato e à personalidade do seu olhar. O trabalho é feito fio a fio, respeitando seus traços naturais e acompanhando seus movimentos. Seja você fã de um estilo mais delicado ou marcante, o resultado é sempre o mesmo: sobrancelhas que parecem ter nascido com você.
-                            </p>
+                            <div className="flex w-full">
+                                <div className={`flex flex-col gap-5 max-w-full ${inverse ? 'md:items-end' : ''} sm:max-w-[40vw]`}>
+                                    <h3 className={`${monserrat.className} capitalize text-md sm:text-xl texto font-normal`}>
+                                        Feito para o seu olhar. Pensado para ser só seu.
+                                    </h3>
+                                    <p className={`${monserrat.className} text-sm sm:text-md texto leading-6 font-light ${inverse ? 'md:text-right' : ''}`}>
+                                        {paragrafo}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    {/* Container da imagem - sempre ocupa metade da tela no desktop */}
+                    <div className={`md:w-1/2 ${inverse ? 'md:order-1' : ''}`}>
+                        <Image
+                            fetchPriority="high"
+                            ref={imageRef}
+                            src={srcImage}
+                            alt="Sobrancelhas"
+                            width={500}
+                            height={500}
+                            // CORREÇÃO: Remove o posicionamento absolute para funcionar com o flex
+                            className="w-full h-[40vh] md:h-[100vh] object-cover mt-5 md:mt-0"
+                        />
+                    </div>
                 </div>
-                <Image
-                    fetchPriority="high"
-                    ref={imageRef}
-                    src="/images/pexels-alipazani-2772099.avif"
-                    alt="Sobrancelhas"
-                    width={500}
-                    height={500}
-                    className="w-full md:w-1/2 h-[40vh] md:h-[100vh] object-cover md:absolute md:top-0 md:right-0 md:-z-10 mt-5 md:mt-0"
-                />
             </div>
             <div className="absolute bottom-5 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce z-10">
                 <ChevronDown className="w-6 h-6 sm:w-10 sm:h-10" />

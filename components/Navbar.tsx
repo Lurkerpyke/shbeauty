@@ -9,6 +9,7 @@ import { Button } from './ui/button'
 import { services } from '@/data'
 import FlowingMenu from './ui/flowingmenu'
 import { useState, useEffect } from 'react'
+import { ChevronDown } from 'lucide-react'
 
 const cormorantSC = Cormorant_SC({
     subsets: ['latin'],
@@ -64,7 +65,7 @@ export default function Navbar() {
                         className='-translate-y-3 z-50'
                     />
                     <Link href="/" className={`${cormorantSC.className} text-white tracking-wider font-bold text-xl z-50 relative`}>
-                        SH BEAUTY
+                        BEAUTY STUDIO
                     </Link>
                 </div>
 
@@ -101,12 +102,22 @@ export default function Navbar() {
                                     <Link href="#">FACEBOOK</Link>
                                     <Link href="#">INSTAGRAM</Link>
                                 </div>
-                                <nav className="flex flex-col gap-2 lg:text-lg text-sm">
-                                    <Link href="/our-history" onClick={() => setIsOpen(false)}>/ NOSSA HISTÓRIA</Link>
-                                    <Link href="newsletter" onClick={() => setIsOpen(false)}>/ Newsletter</Link>
-                                    <Link href="/loc" onClick={() => setIsOpen(false)}>/ LOCALIZAÇÃO</Link>
-                                    <Link href="/services/001" onClick={() => setIsOpen(false)}>/ SERVIÇOS</Link>
-                                </nav>
+                                <div className="flex gap-8 items-center justify-between mb-4 text-sm">
+                                    <nav className="flex flex-col gap-2 lg:text-lg text-sm">
+                                        <Link href="/our-history" onClick={() => setIsOpen(false)}>/ NOSSA HISTÓRIA</Link>
+                                        <Link href="newsletter" onClick={() => setIsOpen(false)}>/ NEWSLETTER</Link>
+                                        <Link href="/loc" onClick={() => setIsOpen(false)}>/ LOCALIZAÇÃO</Link>
+                                        <Link href="/services/001" onClick={() => setIsOpen(false)}>/ SERVIÇOS</Link>
+                                    </nav>
+                                    <div className='md:hidden'>
+                                        <div className="animate-bounce z-10">
+                                            <ChevronDown className="w-6 h-6 sm:w-10 sm:h-10" />
+                                            <span className={`mt-1 text-xs sm:text-sm tracking-widest`}>
+                                                SCROLL
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="mt-8">
                                 <p className="font-bold text-sm mb-2">AGENDAMENTO</p>
