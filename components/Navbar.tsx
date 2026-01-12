@@ -129,7 +129,7 @@ export default function Navbar() {
                                     target="_blank" 
                                     rel="noopener noreferrer">/ AGENDAR VIA WHATSAPP</a>
 
-                                    <a href="tel:+5599123456789">/ AGENDAR VIA TELEFONE</a>
+                                    <a href="tel:+55912341234">/ AGENDAR VIA TELEFONE</a>
                                 </nav>
                                 <div className="flex flex-col lg:flex-row gap-5 items-start lg:items-end my-6 ">
                                     <Image
