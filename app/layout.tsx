@@ -13,8 +13,8 @@ const cormorant = Cormorant_Garamond({
 
 
 export const metadata: Metadata = {
-  title: "SH Beauty",
-  description: "Beleza e Estilo para Sobrancelhas",
+  title: "Beauty Studio",
+  description: "Beleza e Estilo para Você",
 };
 
 export default function RootLayout({

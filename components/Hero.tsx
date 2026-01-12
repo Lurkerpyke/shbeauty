@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from 'react';
+import { useRef, useId } from 'react'; // Adicione useId
 
 const cormorantSC = Cormorant_SC({
     subsets: ['latin'],
@@ -18,7 +18,7 @@ const cormorantSC = Cormorant_SC({
 
 const monserrat = Montserrat({
     subsets: ['latin'],
-    weight: ['100','300', '400', '500', '600', '700'],
+    weight: ['100', '300', '400', '500', '600', '700'],
     variable: '--font-montserrat',
     display: 'swap',
 });
@@ -26,6 +26,7 @@ const monserrat = Montserrat({
 interface props {
     numero: string;
     servico: string;
+    subtitulo: string;
     paragrafo: string;
     srcImage: string;
     inverse?: boolean;
@@ -33,17 +34,18 @@ interface props {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Hero = ({ numero, servico, paragrafo, srcImage, inverse=false }: props) => {
+const Hero = ({ numero, servico, subtitulo, paragrafo, srcImage, inverse = false }: props) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
+    const uniqueId = useId(); // Gera um ID único para cada instância do componente
 
     useGSAP(() => {
         if (!imageRef.current || !containerRef.current) return;
 
-        const texts = gsap.utils.toArray('.texto');
+        // CORREÇÃO: Usar seletores específicos para este componente
+        const texts = containerRef.current.querySelectorAll(`.texto-${uniqueId}`);
 
         if (window.innerWidth >= 768) {
-            // CORREÇÃO: Lógica da animação corrigida
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
@@ -61,15 +63,13 @@ const Hero = ({ numero, servico, paragrafo, srcImage, inverse=false }: props) =>
                 ease: "none",
             }, 0);
 
-            // Quando inverse = true, a animação deve mover para a direita (xPercent positivo)
             tl.to(imageRef.current, {
                 scale: 2,
                 duration: 1.5,
-                xPercent: inverse ? 50 : -50, // CORREÇÃO: Mantém a lógica original
+                xPercent: inverse ? 50 : -50,
                 ease: "none",
             }, 0);
         } else {
-            // Animação para mobile (mantida igual)
             const tlMobile = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
@@ -95,7 +95,7 @@ const Hero = ({ numero, servico, paragrafo, srcImage, inverse=false }: props) =>
                 ease: "none",
             }, 0);
         }
-    }, [inverse]);
+    }, [inverse, uniqueId]);
 
     return (
         <section ref={containerRef} className="h-[100vh] overflow-hidden relative pt-15 lg:pt-0 bg-background">
@@ -104,31 +104,31 @@ const Hero = ({ numero, servico, paragrafo, srcImage, inverse=false }: props) =>
                     text="QUALIDADE*QUALIDADE*"
                     onHover="speedUp"
                     spinDuration={20}
-                    className="absolute left-1/2 top-10 sm:top-20 translate-x-[-50%] texto hidden md:block z-50"
+                    className={`absolute left-1/2 top-10 sm:top-20 translate-x-[-50%] texto-${uniqueId} hidden md:block z-50`}
                 />
 
-                {/* CORREÇÃO: Reestruturação do layout para garantir alinhamento correto */}
                 <div className="relative h-full flex md:flex-row flex-col">
-                    {/* Container do texto - sempre ocupa metade da tela no desktop */}
                     <div className={`md:w-1/2 flex items-center justify-center ${inverse ? 'md:order-2' : ''}`}>
                         <div className={`flex flex-col gap-2 md:gap-5 px-6 md:px-20 z-10 w-full ${inverse ? 'md:text-right md:items-end' : ''}`}>
                             <div className={`flex ${inverse ? 'justify-end' : ''} gap-3 sm:gap-5 items-center`}>
-                                <p className={`${monserrat.className} tracking-normal text-xl sm:text-3xl texto font-thin`}>{numero}</p>
-                                <span className={`${cormorantSC.className} translate-y-0.5 texto tracking-widest font-bold text-lg sm:text-2xl`}>
+                                <p className={`${monserrat.className} tracking-normal text-xl sm:text-3xl texto-${uniqueId} font-thin`}>
+                                    {numero}
+                                </p>
+                                <span className={`${cormorantSC.className} translate-y-0.5 texto-${uniqueId} tracking-widest font-bold text-lg sm:text-2xl`}>
                                     BEAUTY STUDIO
                                 </span>
                             </div>
 
-                            <h1 className={`${cormorantSC.className} font-medium texto uppercase tracking-tight text-3xl sm:text-7xl`}>
+                            <h1 className={`${cormorantSC.className} font-medium texto-${uniqueId} uppercase tracking-tight text-3xl sm:text-7xl`}>
                                 {servico}
                             </h1>
 
                             <div className="flex w-full">
                                 <div className={`flex flex-col gap-5 max-w-full ${inverse ? 'md:items-end' : ''} sm:max-w-[40vw]`}>
-                                    <h3 className={`${monserrat.className} capitalize text-md sm:text-xl texto font-normal`}>
-                                        Feito para o seu olhar. Pensado para ser só seu.
+                                    <h3 className={`${monserrat.className} capitalize text-md sm:text-xl texto-${uniqueId} font-normal`}>
+                                        {subtitulo}
                                     </h3>
-                                    <p className={`${monserrat.className} text-sm sm:text-md texto leading-6 font-light ${inverse ? 'md:text-right' : ''}`}>
+                                    <p className={`${monserrat.className} text-sm sm:text-md texto-${uniqueId} leading-6 font-light ${inverse ? 'md:text-right' : ''}`}>
                                         {paragrafo}
                                     </p>
                                 </div>
@@ -136,16 +136,14 @@ const Hero = ({ numero, servico, paragrafo, srcImage, inverse=false }: props) =>
                         </div>
                     </div>
 
-                    {/* Container da imagem - sempre ocupa metade da tela no desktop */}
                     <div className={`md:w-1/2 ${inverse ? 'md:order-1' : ''}`}>
                         <Image
                             fetchPriority="high"
                             ref={imageRef}
                             src={srcImage}
-                            alt="Sobrancelhas"
+                            alt={servico}
                             width={500}
                             height={500}
-                            // CORREÇÃO: Remove o posicionamento absolute para funcionar com o flex
                             className="w-full h-[40vh] md:h-[100vh] object-cover mt-5 md:mt-0"
                         />
                     </div>
