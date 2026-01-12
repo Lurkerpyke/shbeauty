@@ -310,14 +310,6 @@ export default function OurHistoryPage() {
                 Agendar Consulta
               </a>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="px-8 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
-              onClick={scrollToTimeline}
-            >
-              Conheça Nossa Jornada
-            </Button>
           </motion.div>
         </div>
 
@@ -487,10 +479,10 @@ export default function OurHistoryPage() {
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg border border-border mb-4 text-background">
                   {principle.icon}
                 </div>
-                <h3 className="text-lg font-semibold mb-3 text-foreground">
+                <h3 className="text-lg font-semibold mb-3 text-background">
                   {principle.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-background/90 text-sm">
                   {principle.description}
                 </p>
               </motion.div>
@@ -584,13 +576,6 @@ export default function OurHistoryPage() {
                 >
                   Agendar Minha Transformação
                 </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="px-8 border-background text-background hover:bg-background/10 transition-all duration-300"
-              >
-                Conhecer Todos os Serviços
               </Button>
             </div>
           </motion.div>
